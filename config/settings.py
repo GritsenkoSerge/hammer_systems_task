@@ -130,10 +130,12 @@ SWAGGER_SETTINGS = {
 }
 
 SPECTACULAR_SETTINGS = {
-    'TITLE': 'Документация API',
-    'DESCRIPTION': 'Документация API',
+    'TITLE': 'Реферальная система',
+    'DESCRIPTION': 'Тестовое задание для Python-разработчика',
     'VERSION': '1.0.0',
     'SERVE_INCLUDE_SCHEMA': False,
     'CONTACT': {'name': 'Сергей Гриценко', 'email': 'gritsenko.serge.2013@yandex.ru'},
     'LICENSE': {'name': 'MIT License'},
 }
+
+SMS_BACKEND = 'sms.backends.console.SmsBackend'

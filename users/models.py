@@ -30,6 +30,7 @@ class User(TimeStampedMixin, UUIDMixin, AbstractUser):
         unique=True,
         max_length=16,
     )
+    last_texted = models.DateTimeField(_('last_texted'), blank=True, null=True)
 
     objects = UserManager()
 
@@ -44,7 +45,6 @@ class User(TimeStampedMixin, UUIDMixin, AbstractUser):
 
     def get_masked_phone(self) -> str:
         """Возвращает замаскированный номер телефона."""
-
         phone_number = ''
         index = 0
         for char in str(self.phone):

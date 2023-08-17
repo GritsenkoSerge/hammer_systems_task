@@ -2,6 +2,8 @@ from rest_framework import serializers
 
 
 class DetailSerializer(serializers.Serializer):
+    """Detail-response serializer."""
+
     detail = serializers.CharField()
 
 
