@@ -26,7 +26,7 @@ class AuthViewSet(viewsets.ViewSet):
 
     @action(methods=['post'], detail=False)
     def signup(self, request: Request):
-        """Регистрация пользователя."""
+        """Регистрирует пользователя, задает пароль и отправляет сообщение с паролем."""
         serializer = SignupSerializer(data=request.data)
         serializer.is_valid(raise_exception=True)
         phone_number = serializer.validated_data['phone'].as_e164
@@ -43,7 +43,7 @@ class AuthViewSet(viewsets.ViewSet):
 
     @action(methods=['post'], detail=False)
     def login(self, request: Request):
-        """Аутентификация пользователя (получение токена)."""
+        """Получает токен аутентификации пользователя."""
         serializer = TokenCreateSerializer(data=request.data)
         serializer.is_valid(raise_exception=True)
         token = login_user(request, serializer.user)
@@ -63,6 +63,6 @@ class AuthViewSet(viewsets.ViewSet):
         permission_classes=[IsAuthenticated],
     )
     def logout(self, request: Request, *args, **kwargs):
-        """Выход пользователя (отзыв токена)."""
+        """Удаляет токен аутентификации пользователя."""
         logout_user(request)
         return Response(status=status.HTTP_204_NO_CONTENT)
