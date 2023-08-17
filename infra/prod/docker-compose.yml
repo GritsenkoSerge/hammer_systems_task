@@ -1,0 +1,52 @@
+version: '3.9'
+name: 'django_sample_prod'
+
+services:
+  postgres:
+    image: postgres:14
+    volumes:
+      - postgres_value:/var/lib/postgresql/data
+      - ../../pg-initdb:/docker-entrypoint-initdb.d
+    env_file:
+      - ./.env
+    healthcheck:
+      test:
+        [
+          "CMD-SHELL",
+          "pg_isready --username ${POSTGRES_USER} --dbname ${POSTGRES_DB}"
+        ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+    expose:
+      - "5432"
+
+  backend:
+    build:
+      context: ../../
+    depends_on:
+      postgres:
+        condition: service_healthy
+    volumes:
+      - static_value:/app/static/
+    env_file:
+      - ./.env
+    expose:
+      - "8000"
+
+  nginx:
+    image: nginx:1.23.4
+    ports:
+      - "8080:80"
+    depends_on:
+      - backend
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./nginx/configs:/etc/nginx/conf.d:ro
+      - static_value:/usr/share/nginx/html/static
+    command: "/bin/sh -c 'while :; do sleep 6h & wait $${!}; nginx -s reload; done & nginx -g \"daemon off;\"'"
+
+volumes:
+  postgres_value:
+  static_value:
