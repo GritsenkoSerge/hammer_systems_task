@@ -25,6 +25,7 @@ INSTALLED_APPS = [
     'rest_framework.authtoken',
     'djoser',
     'drf_spectacular',
+    'phonenumber_field',
     'users.apps.UsersConfig',
 ]
 
@@ -67,7 +68,7 @@ DATABASES = {
         'HOST': os.environ.get('POSTGRES_HOST', '127.0.0.1'),
         'PORT': os.environ.get('POSTGRES_PORT', 5432),
         'OPTIONS': {
-            'options': '-c search_path=public,schema_name',
+            'options': '-c search_path=public,referral_system',
         },
     },
 }
@@ -104,6 +105,12 @@ TIME_ZONE = 'Europe/Moscow'
 USE_I18N = True
 USE_TZ = True
 LOCALE_PATHS = [BASE_DIR / 'locale']
+PHONENUMBER_DEFAULT_REGION = 'RU'
+PHONENUMBER_DEFAULT_FORMAT = 'INTERNATIONAL'
+PHONENUMBER_DB_FORMAT = 'E164'
+PHONENUMBER_COUNTRY_CODE = 7
+PHONENUMBER_MASK_DIGITS = (8, 9, 10)
+PHONENUMBER_MASK_SYMBOL = '*'
 
 STATIC_ROOT = BASE_DIR / 'static/'
 STATIC_URL = '/static/'

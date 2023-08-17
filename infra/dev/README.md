@@ -2,11 +2,11 @@
 
 ### Клонировать репозиторий
 ```
-git clone https://github.com/GritsenkoSerge/django_sample
+git clone https://github.com/GritsenkoSerge/hammer_systems_task
 ```
 ### Перейти в директорию проекта
 ```
-cd django_sample
+cd hammer_systems_task
 ```
 ### Создать/обновить виртуальное окружение с помощью poetry
 ```

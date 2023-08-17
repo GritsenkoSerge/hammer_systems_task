@@ -4,6 +4,8 @@ from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
 from django.contrib.auth.models import Group
 from django.utils.translation import gettext_lazy as _
 
+from users.models import Profile
+
 User = get_user_model()
 
 admin.site.unregister(Group)
@@ -13,13 +15,13 @@ admin.site.unregister(Group)
 class UserAdmin(BaseUserAdmin):
     list_display = (
         'pk',
-        'email',
+        'phone',
         'is_staff',
     )
     list_filter = ('is_staff',)
-    search_fields = ('email',)
+    search_fields = ('phone',)
     fieldsets = (
-        (None, {'fields': ('email', 'password')}),
+        (None, {'fields': ('phone', 'password')}),
         (
             _('Permissions'),
             {
@@ -48,7 +50,7 @@ class UserAdmin(BaseUserAdmin):
             {
                 'classes': ('wide',),
                 'fields': (
-                    'email',
+                    'phone',
                     'password1',
                     'password2',
                     'is_active',
@@ -58,4 +60,19 @@ class UserAdmin(BaseUserAdmin):
             },
         ),
     )
-    ordering = ('email',)
+    ordering = ('phone',)
+
+
+@admin.register(Profile)
+class ProfileAdmin(admin.ModelAdmin):
+    list_display = (
+        'user',
+        'referral_code',
+        'affiliate_code',
+        'first_name',
+        'last_name',
+        'email',
+        'created_at',
+    )
+    autocomplete_fields = ('user',)
+    readonly_fields = ('referral_code',)

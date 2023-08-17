@@ -2,11 +2,11 @@
 
 ### Клонировать репозиторий
 ```
-git clone https://github.com/GritsenkoSerge/django_sample
+git clone https://github.com/GritsenkoSerge/hammer_systems_task
 ```
-### Перейти в директорию django_sample/infra/prod
+### Перейти в директорию hammer_systems_task/infra/prod
 ```
-cd django_sample/infra/prod
+cd hammer_systems_task/infra/prod
 ```
 ### Скопировать файл `.env.example` в `.env`, при необходимости задать значения переменным
 ```
