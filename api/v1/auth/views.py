@@ -13,6 +13,7 @@ from rest_framework.response import Response
 
 from api.v1.auth import schema
 from api.v1.auth.serializers import SignupSerializer
+from api.v1.serializers import DummySerializer
 from sms import send_sms
 
 User = get_user_model()
@@ -23,6 +24,7 @@ class AuthViewSet(viewsets.ViewSet):
     """Аутентификация."""
 
     pagination_class = None
+    serializer_class = DummySerializer
 
     @action(methods=['post'], detail=False)
     def signup(self, request: Request):

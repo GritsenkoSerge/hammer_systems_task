@@ -1,4 +1,4 @@
-from djoser import serializers as djoser_serializers
+from djoser.serializers import TokenCreateSerializer, TokenSerializer
 from drf_spectacular.utils import OpenApiExample, extend_schema
 from rest_framework import status
 
@@ -28,9 +28,9 @@ AUTH_VIEW_SET_SCHEMA = {
     ),
     'login': extend_schema(
         summary='Аутентифицировать пользователя.',
-        request=djoser_serializers.TokenCreateSerializer,
+        request=TokenCreateSerializer,
         responses={
-            status.HTTP_200_OK: djoser_serializers.TokenSerializer,
+            status.HTTP_200_OK: TokenSerializer,
         },
         examples=[
             OpenApiExample(
