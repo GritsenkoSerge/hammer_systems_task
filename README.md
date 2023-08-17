@@ -1,4 +1,4 @@
-# Django project
+# Реферальная система (тестовое задание для Python-разработчика)
 [Техническое задание](./docs/technical-assignment.md)
 
 [Запуск проекта](infra/prod/README.md)
