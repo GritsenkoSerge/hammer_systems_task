@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-17 11:01+0300\n"
+"POT-Creation-Date: 2023-08-18 16:21+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,34 +18,79 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: core/models.py:10
+#: api/v1/auth/serializers.py:9 api/v1/profiles/serializers.py:14
+#: users/models.py:29
+msgid "phone"
+msgstr "Phone"
+
+#: api/v1/profiles/serializers.py:43 users/models.py:120
+msgid "Affiliate referral code does not exists."
+msgstr "Affiliate referral code does not exists."
+
+#: core/models.py:11
 msgid "created_at"
-msgstr ""
+msgstr "Created at"
 
 #: core/models.py:13
 msgid "updated_at"
-msgstr ""
+msgstr "Updated at"
 
-#: core/models.py:22
+#: core/models.py:23
 msgid "id"
-msgstr ""
+msgstr "ID"
 
-#: users/admin.py:24
+#: users/admin.py:27
 msgid "Permissions"
-msgstr ""
+msgstr "Permissions"
 
-#: users/admin.py:34
+#: users/admin.py:37
 msgid "Important dates"
-msgstr ""
+msgstr "Important dates"
 
-#: users/apps.py:8 users/models.py:34
+#: users/apps.py:8 users/models.py:41
 msgid "users"
-msgstr ""
-
-#: users/models.py:24
-msgid "A user with that email already exists."
-msgstr ""
+msgstr "Users"
 
 #: users/models.py:33
+msgid "last_texted_at"
+msgstr "Last texted at"
+
+#: users/models.py:40 users/models.py:71
 msgid "user"
-msgstr ""
+msgstr "User"
+
+#: users/models.py:66
+msgid "first_name"
+msgstr "Firstname"
+
+#: users/models.py:67
+msgid "last_name"
+msgstr "Lastname"
+
+#: users/models.py:68
+msgid "email"
+msgstr "email"
+
+#: users/models.py:76
+msgid "referral_code"
+msgstr "Refferal code"
+
+#: users/models.py:77
+msgid "Unique referral code"
+msgstr "Unique referral code"
+
+#: users/models.py:83
+msgid "affiliate_code"
+msgstr "Affiliate code"
+
+#: users/models.py:84
+msgid "Affiliate referral code"
+msgstr "Affiliate referral code"
+
+#: users/models.py:92
+msgid "profile"
+msgstr "Profile"
+
+#: users/models.py:93
+msgid "profiles"
+msgstr "Profiles"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-17 11:01+0300\n"
+"POT-Creation-Date: 2023-08-18 16:21+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,7 +18,16 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n%100>=11 && n%100<=14)? 2 : 3);\n"
 
-#: core/models.py:10
+#: api/v1/auth/serializers.py:9 api/v1/profiles/serializers.py:14
+#: users/models.py:29
+msgid "phone"
+msgstr "Телефон"
+
+#: api/v1/profiles/serializers.py:43 users/models.py:120
+msgid "Affiliate referral code does not exists."
+msgstr "Реферальный код аффилиата не существует."
+
+#: core/models.py:11
 msgid "created_at"
 msgstr "Дата и время создания"
 
@@ -26,26 +35,62 @@ msgstr "Дата и время создания"
 msgid "updated_at"
 msgstr "Дата и время изменения"
 
-#: core/models.py:22
+#: core/models.py:23
 msgid "id"
 msgstr "Идентификатор"
 
-#: users/admin.py:24
+#: users/admin.py:27
 msgid "Permissions"
 msgstr "Права доступа"
 
-#: users/admin.py:34
+#: users/admin.py:37
 msgid "Important dates"
 msgstr "Важные даты"
 
-#: users/apps.py:8 users/models.py:34
+#: users/apps.py:8 users/models.py:41
 msgid "users"
 msgstr "Пользователи"
 
-#: users/models.py:24
-msgid "A user with that email already exists."
-msgstr "Пользователь с таким email уже существует."
-
 #: users/models.py:33
+msgid "last_texted_at"
+msgstr "Последнее SMS"
+
+#: users/models.py:40 users/models.py:71
 msgid "user"
 msgstr "Пользователь"
+
+#: users/models.py:66
+msgid "first_name"
+msgstr "Имя"
+
+#: users/models.py:67
+msgid "last_name"
+msgstr "Фамилия"
+
+#: users/models.py:68
+msgid "email"
+msgstr "email"
+
+#: users/models.py:76
+msgid "referral_code"
+msgstr "Рефеальный код"
+
+#: users/models.py:77
+msgid "Unique referral code"
+msgstr "Уникальный реферальный код"
+
+#: users/models.py:83
+msgid "affiliate_code"
+msgstr "Код аффилиата"
+
+#: users/models.py:84
+msgid "Affiliate referral code"
+msgstr "Реферальный код аффилиата"
+
+#: users/models.py:92
+msgid "profile"
+msgstr "Профиль"
+
+#: users/models.py:93
+msgid "profiles"
+msgstr "Профили"

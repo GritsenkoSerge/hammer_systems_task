@@ -17,7 +17,7 @@ class PhoneListField(serializers.ListField):
 class ProfileSerializer(serializers.ModelSerializer):
     """Сериализатор профиля пользователя."""
 
-    referrals = PhoneListField()  # (read_only=True, many=True)
+    referrals = PhoneListField(read_only=True)
 
     class Meta:
         model = Profile

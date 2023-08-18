@@ -4,7 +4,7 @@ from rest_framework import serializers
 
 
 class SignupSerializer(serializers.Serializer):
-    """User signup serializer."""
+    """Сериализатор регистрации пользователя."""
 
     phone = PhoneNumberField(label=_('phone'), min_length=10, max_length=16)
     demo_message = serializers.CharField(min_length=4, max_length=4, read_only=True)

@@ -1,4 +1,3 @@
-"""Core models."""
 from uuid import uuid4
 
 from django.db import models
@@ -17,7 +16,7 @@ class TimeStampedMixin(models.Model):
 
 
 class UUIDMixin(models.Model):
-    """UUID primary key mixin."""
+    """Миксин первичного ключа типа UUID."""
 
     pk = models.UUIDField(
         _('id'),
