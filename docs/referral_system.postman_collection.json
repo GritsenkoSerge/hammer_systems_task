@@ -1,0 +1,767 @@
+{
+	"info": {
+		"_postman_id": "a48229f9-7971-460b-8846-f33af79ccf3f",
+		"name": "Реферальная система",
+		"description": "Тестовое задание для Python-разработчика\n\nContact Support:\n Name: Сергей Гриценко\n Email: gritsenko.serge.2013@yandex.ru",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "12474367"
+	},
+	"item": [
+		{
+			"name": "api",
+			"item": [
+				{
+					"name": "v1",
+					"item": [
+						{
+							"name": "auth",
+							"item": [
+								{
+									"name": "login",
+									"item": [
+										{
+											"name": "Аутентифицировать пользователя.",
+											"request": {
+												"auth": {
+													"type": "noauth"
+												},
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/x-www-form-urlencoded"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "urlencoded",
+													"urlencoded": [
+														{
+															"key": "password",
+															"value": "7058"
+														},
+														{
+															"key": "phone",
+															"value": "9136745201"
+														}
+													]
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/auth/login/",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"auth",
+														"login",
+														""
+													]
+												},
+												"description": "Получает токен аутентификации пользователя."
+											},
+											"response": [
+												{
+													"name": "Аутентифицировать пользователя.",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/x-www-form-urlencoded"
+															},
+															{
+																"key": "Accept",
+																"value": "application/json"
+															}
+														],
+														"body": {
+															"mode": "urlencoded",
+															"urlencoded": [
+																{
+																	"key": "password",
+																	"value": "7058"
+																},
+																{
+																	"key": "phone",
+																	"value": "9136745201"
+																}
+															]
+														},
+														"url": {
+															"raw": "{{baseUrl}}/api/v1/auth/login/",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"auth",
+																"login",
+																""
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Server",
+															"value": "nginx"
+														},
+														{
+															"key": "Date",
+															"value": "Fri, 18 Aug 2023 12:16:54 GMT"
+														},
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														},
+														{
+															"key": "Content-Length",
+															"value": "57"
+														},
+														{
+															"key": "Connection",
+															"value": "keep-alive"
+														},
+														{
+															"key": "Vary",
+															"value": "Accept, Cookie"
+														},
+														{
+															"key": "Allow",
+															"value": "POST, OPTIONS"
+														},
+														{
+															"key": "X-Frame-Options",
+															"value": "DENY"
+														},
+														{
+															"key": "X-Content-Type-Options",
+															"value": "nosniff"
+														},
+														{
+															"key": "Referrer-Policy",
+															"value": "same-origin"
+														},
+														{
+															"key": "Cross-Origin-Opener-Policy",
+															"value": "same-origin"
+														},
+														{
+															"key": "Set-Cookie",
+															"value": "sessionid=3x5s6h0zl4pb5juzzjbk8kxe474bprvi; expires=Fri, 01 Sep 2023 12:16:54 GMT; HttpOnly; Max-Age=1209600; Path=/; SameSite=Lax"
+														}
+													],
+													"cookie": [],
+													"body": "{\n    \"auth_token\": \"95003ded5b0fef7701b64a8ae968cd652b811b2b\"\n}"
+												}
+											]
+										}
+									]
+								},
+								{
+									"name": "logout",
+									"item": [
+										{
+											"name": "Отозвать токен аутентификации.",
+											"request": {
+												"auth": {
+													"type": "apikey",
+													"apikey": [
+														{
+															"key": "key",
+															"value": "Authorization",
+															"type": "string"
+														},
+														{
+															"key": "value",
+															"value": "{{apiKey}}",
+															"type": "string"
+														},
+														{
+															"key": "in",
+															"value": "header",
+															"type": "string"
+														}
+													]
+												},
+												"method": "POST",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/auth/logout/",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"auth",
+														"logout",
+														""
+													]
+												},
+												"description": "Удаляет токен аутентификации пользователя."
+											},
+											"response": [
+												{
+													"name": "Отозвать токен аутентификации.",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Accept",
+																"value": "application/json"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/v1/auth/logout/",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"auth",
+																"logout",
+																""
+															]
+														}
+													},
+													"status": "Unauthorized",
+													"code": 401,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Server",
+															"value": "nginx"
+														},
+														{
+															"key": "Date",
+															"value": "Fri, 18 Aug 2023 13:08:20 GMT"
+														},
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														},
+														{
+															"key": "Content-Length",
+															"value": "49"
+														},
+														{
+															"key": "Connection",
+															"value": "keep-alive"
+														},
+														{
+															"key": "WWW-Authenticate",
+															"value": "Token"
+														},
+														{
+															"key": "Vary",
+															"value": "Accept"
+														},
+														{
+															"key": "Allow",
+															"value": "POST, OPTIONS"
+														},
+														{
+															"key": "X-Frame-Options",
+															"value": "DENY"
+														},
+														{
+															"key": "X-Content-Type-Options",
+															"value": "nosniff"
+														},
+														{
+															"key": "Referrer-Policy",
+															"value": "same-origin"
+														},
+														{
+															"key": "Cross-Origin-Opener-Policy",
+															"value": "same-origin"
+														}
+													],
+													"cookie": [],
+													"body": "{\n    \"detail\": \"Недопустимый токен.\"\n}"
+												}
+											]
+										}
+									]
+								},
+								{
+									"name": "signup",
+									"item": [
+										{
+											"name": "Зарегистрировать пользователя.",
+											"request": {
+												"auth": {
+													"type": "noauth"
+												},
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/x-www-form-urlencoded"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "urlencoded",
+													"urlencoded": [
+														{
+															"key": "phone",
+															"value": "9136745201",
+															"description": "(Required) "
+														}
+													]
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/auth/signup/",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"auth",
+														"signup",
+														""
+													]
+												},
+												"description": "Регистрирует пользователя, задает пароль и отправляет сообщение с паролем."
+											},
+											"response": [
+												{
+													"name": "Зарегистрировать пользователя.",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/x-www-form-urlencoded"
+															},
+															{
+																"key": "Accept",
+																"value": "application/json"
+															}
+														],
+														"body": {
+															"mode": "urlencoded",
+															"urlencoded": [
+																{
+																	"key": "phone",
+																	"value": "9136745201",
+																	"description": "(Required) "
+																}
+															]
+														},
+														"url": {
+															"raw": "{{baseUrl}}/api/v1/auth/signup/",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"auth",
+																"signup",
+																""
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Server",
+															"value": "nginx"
+														},
+														{
+															"key": "Date",
+															"value": "Fri, 18 Aug 2023 12:14:34 GMT"
+														},
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														},
+														{
+															"key": "Content-Length",
+															"value": "28"
+														},
+														{
+															"key": "Connection",
+															"value": "keep-alive"
+														},
+														{
+															"key": "Vary",
+															"value": "Accept"
+														},
+														{
+															"key": "Allow",
+															"value": "POST, OPTIONS"
+														},
+														{
+															"key": "X-Frame-Options",
+															"value": "DENY"
+														},
+														{
+															"key": "X-Content-Type-Options",
+															"value": "nosniff"
+														},
+														{
+															"key": "Referrer-Policy",
+															"value": "same-origin"
+														},
+														{
+															"key": "Cross-Origin-Opener-Policy",
+															"value": "same-origin"
+														}
+													],
+													"cookie": [],
+													"body": "{\n    \"phone\": \"+7 913 674-52-01\"\n}"
+												}
+											]
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "profiles",
+							"item": [
+								{
+									"name": "me",
+									"item": [
+										{
+											"name": "Получить информацию о профиле.",
+											"request": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/profiles/me/",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"profiles",
+														"me",
+														""
+													]
+												}
+											},
+											"response": [
+												{
+													"name": "Получить информацию о профиле.",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"key": "Accept",
+																"value": "application/json"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/v1/profiles/me/",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"profiles",
+																"me",
+																""
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Server",
+															"value": "nginx"
+														},
+														{
+															"key": "Date",
+															"value": "Fri, 18 Aug 2023 12:18:50 GMT"
+														},
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														},
+														{
+															"key": "Content-Length",
+															"value": "103"
+														},
+														{
+															"key": "Connection",
+															"value": "keep-alive"
+														},
+														{
+															"key": "Vary",
+															"value": "Accept"
+														},
+														{
+															"key": "Allow",
+															"value": "GET, PATCH, HEAD, OPTIONS"
+														},
+														{
+															"key": "X-Frame-Options",
+															"value": "DENY"
+														},
+														{
+															"key": "X-Content-Type-Options",
+															"value": "nosniff"
+														},
+														{
+															"key": "Referrer-Policy",
+															"value": "same-origin"
+														},
+														{
+															"key": "Cross-Origin-Opener-Policy",
+															"value": "same-origin"
+														}
+													],
+													"cookie": [],
+													"body": "{\n    \"first_name\": \"\",\n    \"last_name\": \"\",\n    \"email\": \"\",\n    \"referral_code\": \"KvHTLD\",\n    \"affiliate_code\": \"\",\n    \"referrals\": []\n}"
+												}
+											]
+										},
+										{
+											"name": "Изменить информацию о профиле.",
+											"request": {
+												"method": "PATCH",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/x-www-form-urlencoded"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "urlencoded",
+													"urlencoded": [
+														{
+															"key": "first_name",
+															"value": "<string>"
+														},
+														{
+															"key": "last_name",
+															"value": "<string>"
+														},
+														{
+															"key": "email",
+															"value": "<email>"
+														},
+														{
+															"key": "affiliate_code",
+															"value": "<string>",
+															"description": "Affiliate referral code"
+														}
+													]
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/profiles/me/",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"profiles",
+														"me",
+														""
+													]
+												}
+											},
+											"response": [
+												{
+													"name": "Изменить информацию о профиле.",
+													"originalRequest": {
+														"method": "PATCH",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/x-www-form-urlencoded"
+															},
+															{
+																"key": "Accept",
+																"value": "application/json"
+															}
+														],
+														"body": {
+															"mode": "urlencoded",
+															"urlencoded": [
+																{
+																	"key": "first_name",
+																	"value": "Сергей"
+																},
+																{
+																	"key": "last_name",
+																	"value": "Гриценко"
+																},
+																{
+																	"key": "email",
+																	"value": "gritsenko.serge.2013@yandex.ru"
+																},
+																{
+																	"key": "affiliate_code",
+																	"value": "<string>",
+																	"description": "Affiliate referral code",
+																	"disabled": true
+																}
+															]
+														},
+														"url": {
+															"raw": "{{baseUrl}}/api/v1/profiles/me/",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"profiles",
+																"me",
+																""
+															]
+														}
+													},
+													"status": "Unauthorized",
+													"code": 401,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Server",
+															"value": "nginx"
+														},
+														{
+															"key": "Date",
+															"value": "Fri, 18 Aug 2023 13:10:34 GMT"
+														},
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														},
+														{
+															"key": "Content-Length",
+															"value": "49"
+														},
+														{
+															"key": "Connection",
+															"value": "keep-alive"
+														},
+														{
+															"key": "WWW-Authenticate",
+															"value": "Token"
+														},
+														{
+															"key": "Vary",
+															"value": "Accept"
+														},
+														{
+															"key": "Allow",
+															"value": "GET, PATCH, HEAD, OPTIONS"
+														},
+														{
+															"key": "X-Frame-Options",
+															"value": "DENY"
+														},
+														{
+															"key": "X-Content-Type-Options",
+															"value": "nosniff"
+														},
+														{
+															"key": "Referrer-Policy",
+															"value": "same-origin"
+														},
+														{
+															"key": "Cross-Origin-Opener-Policy",
+															"value": "same-origin"
+														}
+													],
+													"cookie": [],
+													"body": "{\n    \"detail\": \"Недопустимый токен.\"\n}"
+												}
+											]
+										}
+									]
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "apikey",
+		"apikey": [
+			{
+				"key": "key",
+				"value": "Authorization",
+				"type": "string"
+			},
+			{
+				"key": "value",
+				"value": "{{apiKey}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://referrals.gricen.ru:8001"
+		},
+		{
+			"key": "apiKey",
+			"value": "Token 95003ded5b0fef7701b64a8ae968cd652b811b2b"
+		}
+	]
+}
