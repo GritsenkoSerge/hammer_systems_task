@@ -66,7 +66,7 @@ make run
 ```
 ### Ссылки
 - Открыть страницы документации API:
-  * [api.yaml](http://localhost:8000/api/schema/)
-  * [swagger-ui](http://localhost:8000/api/schema/swagger-ui/)
-  * [redoc](http://localhost:8000/api/schema/redoc/)
+  * [api.yaml](http://localhost:8000/api/v1/schema/)
+  * [swagger-ui](http://localhost:8000/api/v1/schema/swagger-ui/)
+  * [redoc](http://localhost:8000/api/v1/schema/redoc/)
 - Открыть панель администратора [http://localhost:8000/admin/](http://localhost:8000/admin/)
