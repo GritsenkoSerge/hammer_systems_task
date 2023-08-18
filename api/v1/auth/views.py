@@ -28,16 +28,24 @@ class AuthViewSet(viewsets.ViewSet):
 
     @action(methods=['post'], detail=False)
     def signup(self, request: Request):
-        """Регистрирует пользователя, задает пароль и отправляет сообщение с паролем."""
+        """Регистрация пользователя.
+
+        Получает или создает пользователя,
+        задает пароль и отправляет сообщение с паролем.
+        """
         serializer = SignupSerializer(data=request.data)
         serializer.is_valid(raise_exception=True)
         phone_number = serializer.validated_data['phone'].as_e164
         user, created = User.objects.get_or_create(phone=phone_number)
-        new_pass = ''.join(str(secrets.randbelow(10)) for idx in range(4))
-        if send_sms(f'Ваш пароль: {new_pass}', phone_number):
-            user.last_texted_at = timezone.now()
-        user.set_password(new_pass)
-        user.save()
+        if not user.is_staff:
+            # меняем пароль на случайный только для обычных пользователей
+            new_pass = ''.join(str(secrets.randbelow(10)) for idx in range(4))
+            if send_sms(f'Ваш пароль: {new_pass}', phone_number):
+                user.last_texted_at = timezone.now()
+            user.set_password(new_pass)
+            user.save()
+            serializer.validated_data['demo_message'] = new_pass
+
         return Response(
             serializer.data,
             status=status.HTTP_200_OK,

@@ -5,11 +5,13 @@
 
 [Запуск проекта в режиме разработчика](infra/dev/README.md)
 
-### Деплой:
-[swagger]()
+### Прод:
+[swagger](http://referrals.gricen.ru:8001/api/v1/schema/swagger-ui/)
 
-[redoc]()
+[redoc](http://referrals.gricen.ru:8001/api/v1/schema/redoc/)
 
-[схема]()
+[схема](http://referrals.gricen.ru:8001/api/v1/schema)
+
+[панель администратор](http://referrals.gricen.ru:8001/admin/)
 
 ### TODO
