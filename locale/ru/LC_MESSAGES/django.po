@@ -81,7 +81,7 @@ msgstr "Уникальный реферальный код"
 
 #: users/models.py:83
 msgid "affiliate_code"
-msgstr "Код аффилиата"
+msgstr "Реферальный код аффилиата"
 
 #: users/models.py:84
 msgid "Affiliate referral code"
