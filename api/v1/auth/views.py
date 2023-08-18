@@ -35,7 +35,7 @@ class AuthViewSet(viewsets.ViewSet):
         user, created = User.objects.get_or_create(phone=phone_number)
         new_pass = ''.join(str(secrets.randbelow(10)) for idx in range(4))
         if send_sms(f'Ваш пароль: {new_pass}', phone_number):
-            user.last_texted = timezone.now()
+            user.last_texted_at = timezone.now()
         user.set_password(new_pass)
         user.save()
         return Response(

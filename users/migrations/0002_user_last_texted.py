@@ -11,11 +11,11 @@ class Migration(migrations.Migration):
     operations = [
         migrations.AddField(
             model_name='user',
-            name='last_texted',
+            name='last_texted_at',
             field=models.DateTimeField(
                 blank=True,
                 null=True,
-                verbose_name='last_texted',
+                verbose_name='last_texted_at',
             ),
         ),
     ]

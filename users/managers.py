@@ -1,3 +1,5 @@
+from typing import Any, Tuple
+
 from django.apps import apps
 from django.contrib.auth.base_user import BaseUserManager
 from django.db import transaction
@@ -11,6 +13,14 @@ class UserManager(BaseUserManager):
         extra_fields.setdefault('is_superuser', False)
         extra_fields.setdefault('is_active', True)
         return self._create_user(phone, password, **extra_fields)
+
+    def get_or_create(self, *args, **kwargs) -> Tuple[Any, bool]:
+        with transaction.atomic():
+            user, created = super().get_or_create(*args, **kwargs)
+            if created:
+                profile_model = apps.get_model(app_label='users', model_name='Profile')
+                profile_model.objects.create(user=user)
+        return user, created
 
     def create_superuser(self, phone, password, **extra_fields):
         extra_fields.setdefault('is_staff', True)

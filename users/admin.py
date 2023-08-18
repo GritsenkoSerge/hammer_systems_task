@@ -16,6 +16,7 @@ class UserAdmin(BaseUserAdmin):
     list_display = (
         'pk',
         'phone',
+        'last_texted_at',
         'is_staff',
     )
     list_filter = ('is_staff',)
@@ -37,6 +38,7 @@ class UserAdmin(BaseUserAdmin):
             {
                 'fields': (
                     'last_login',
+                    'last_texted_at',
                     'created_at',
                     'updated_at',
                 ),
@@ -69,6 +71,7 @@ class ProfileAdmin(admin.ModelAdmin):
         'user',
         'referral_code',
         'affiliate_code',
+        # 'affiliate',
         'first_name',
         'last_name',
         'email',

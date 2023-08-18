@@ -30,7 +30,7 @@ class User(TimeStampedMixin, UUIDMixin, AbstractUser):
         unique=True,
         max_length=16,
     )
-    last_texted = models.DateTimeField(_('last_texted'), blank=True, null=True)
+    last_texted_at = models.DateTimeField(_('last_texted_at'), blank=True, null=True)
 
     objects = UserManager()
 
@@ -102,24 +102,21 @@ class Profile(TimeStampedMixin):
     def save(self, **kwargs):
         while not self.referral_code:
             self.referral_code = generate_slug()
-            if Profile.objects.filter(  # all_objects
+            if Profile.objects.filter(
                 ~Q(pk=self.pk),
                 referral_code=self.referral_code,
             ).exists():
                 continue
         return super().save(**kwargs)
 
-    def clean(self) -> None:
+    def clean_fields(self, exclude=None):
+        super().clean_fields(exclude=exclude)
         if (
             self.affiliate_code
-            and not Profile.objects.filter(  # all_objects
-                ~Q(pk=self.pk),
-                referral_code=self.affiliate_code,
-            ).exists()
+            and not Profile.objects.filter(referral_code=self.affiliate_code).exists()
         ):
             raise ValidationError(
                 {
                     'affiliate_code': _('Affiliate referral code does not exists.'),
                 },
             )
-        return super().clean()

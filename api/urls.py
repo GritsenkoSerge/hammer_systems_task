@@ -9,6 +9,7 @@ app_name = 'api'
 
 urls_v1 = [
     path('auth/', include('api.v1.auth.urls', namespace='auth')),
+    path('profiles/', include('api.v1.profiles.urls', namespace='profiles')),
 ]
 
 
