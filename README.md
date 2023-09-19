@@ -6,13 +6,13 @@
 [Запуск проекта в режиме разработчика](./infra/dev/README.md)
 
 ### Прод:
-[swagger](http://referrals.gricen.ru:8001/api/v1/schema/swagger-ui/)
+[swagger](http://localhost:8000/api/v1/schema/swagger-ui/)
 
-[redoc](http://referrals.gricen.ru:8001/api/v1/schema/redoc/)
+[redoc](http://localhost:8000/api/v1/schema/redoc/)
 
-[схема](http://referrals.gricen.ru:8001/api/v1/schema)
+[схема](http://localhost:8000/api/v1/schema)
 
-[панель администратор](http://referrals.gricen.ru:8001/admin/)
+[панель администратор](http://localhost:8000/admin/)
 
 
 ## Описание функционала
